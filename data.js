@@ -25,7 +25,7 @@ window.PROJECTS = [
 ];
 
 window.PHOTOS = [
-  /* { file:"DSCF1234.jpg" }, */
+  /* { file:"DSC_6023.jpg" }, */ * { file:"DSC_6022.jpg" }, */* { file:"DSC_6021.jpg" }, */ * { file:"DSC_6040.jpg" }, */ * { file:"DSC_6041.jpg" }, */ * { file:"DSC_6042.jpg" }, */ * { file:"DSC_6043.jpg" }, */ * { file:"DSC_6044.jpg" }, */ * { file:"DSC_6045.jpg" }, */ * { file:"DSC_6046.jpg" }, */ * { file:"DSC_6047.jpg" }, */ * { file:"DSC_6048.jpg" }, */
 ];
 
 window.ABOUT = {
