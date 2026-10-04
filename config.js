@@ -3,15 +3,14 @@
    Las rutas de imagen son relativas a /images/
    ============================================================ */
 
-/* Genera fotos de relleno: P(carpeta, nombre, [layouts], {title, location, date}).
-   Cada foto puede reemplazarse por un objeto manual con estos campos:
-   { file, title, location, date, caption, alt, w, h, layout }
-   layout: "full" (ancho completo) | "wide" (grande) | "tall" (vertical) | "half" (par) */
-const P = (dir, slug, layouts, o = {}) => layouts.map((l, i) => ({
-  file: `${dir}/${slug}-${String(i + 1).padStart(2, '0')}.jpg`,
-  title: o.title || '[TITLE]', location: o.location || '[LOCATION]', date: o.date || '[DATE]',
-  caption: o.caption || '[CAPTION]', alt: o.alt || '[ALT TEXT]',
-  w: l === 'tall' ? 1067 : 1600, h: l === 'tall' ? 1600 : 1067, layout: l
+/* FOTOS con nombre genérico. Sube todas a la carpeta /images/ del repositorio.
+   Si tus archivos terminan en .JPG (mayúsculas), cambia EXT a '.JPG'. */
+const EXT = '.jpg';
+const CYCLE = ['full', 'half', 'half', 'half', 'half', 'full']; // ritmo visual; cámbialo si quieres
+/* F(['DSC_6003','DSC_6004'], {title, location, date, caption, alt}) crea las fotos. Los campos son opcionales. */
+const F = (names, o = {}) => names.map((n, i) => ({
+  file: n + EXT, title: o.title || '', location: o.location || '', date: o.date || '', caption: o.caption || '',
+  alt: o.alt || 'Photograph by Tecuani Mishpanti', w: 1600, h: 1067, layout: o.layout || CYCLE[i % CYCLE.length]
 }));
 
 window.SITE = {
@@ -32,32 +31,16 @@ window.SITE = {
   CAPABILITIES: ['Photography', 'Photojournalism', 'Documentary research', 'Interviews', 'Field production', 'Video', 'Drone photography', 'Lightroom'],
 
   /* Foto principal de la portada (images/home/hero-01.jpg) */
-  HERO: { file: 'home/hero-01.jpg', title: '[TITLE]', location: '[LOCATION]', date: '[DATE]', caption: '', alt: '[ALT TEXT]', w: 1600, h: 1067, layout: 'full' },
+  HERO: { file: 'DSC_6003' + EXT, title: '', location: '', date: '', caption: '', alt: 'Photograph by Tecuani Mishpanti', w: 1600, h: 1067, layout: 'full' }, // cambia DSC_6003 por tu foto principal
 
   /* Selección de portada y página WORK (documental, fotoperiodismo, calle, cultura, territorio, vida cotidiana) */
-  WORK: P('home', 'selected', ['full', 'tall', 'tall', 'wide', 'tall', 'half', 'half', 'full']),
+  WORK: F(['DSC_6003', 'DSC_6004', 'DSC_6005', 'DSC_6006', 'DSC_6007', 'DSC_6008', 'DSC_6009', 'DSC_6011', 'DSC_6012', 'DSC_6013', 'DSC_6015', 'DSC_6017', 'DSC_6018', 'DSC_6019', 'DSC_6020', 'DSC_6021', 'DSC_6022', 'DSC_6023']),
 
   /* Selección de calle: images/street/street-san-salvador-01.jpg ... */
-  STREET: P('street', 'street-san-salvador', ['wide', 'tall', 'half', 'half'], { location: 'San Salvador' }),
+  STREET: [], // opcional: F(['DSC_0001', ...])
 
   /* STORIES — añade un proyecto copiando un bloque */
-  STORIES: [
-    { id: 'sensunapan', title: 'SENSUNAPÁN', tags: 'Territory · Indigenous communities · Water', location: '[LOCATION]', date: '[DATE]',
-      intro: '[PROJECT DESCRIPTION]', context: '[CONTEXT NOTE]',
-      photos: P('stories', 'sensunapan', ['full', 'tall', 'tall', 'half', 'half', 'wide']) },
-    { id: 'popular-religion', title: 'POPULAR RELIGION', tags: 'Faith · Ritual · Everyday life', location: '[LOCATION]', date: '[DATE]',
-      intro: '[PROJECT DESCRIPTION]', context: '',
-      photos: P('stories', 'popular-religion', ['full', 'tall', 'tall', 'half', 'half']) },
-    { id: 'indigenous-communities', title: 'INDIGENOUS COMMUNITIES', tags: 'Culture · Land · Identity', location: '[LOCATION]', date: '[DATE]',
-      intro: '[PROJECT DESCRIPTION]', context: '',
-      photos: P('stories', 'indigenous-communities', ['wide', 'tall', 'half', 'half']) },
-    { id: 'san-salvador', title: 'SAN SALVADOR', tags: 'Urban life · Memory · Territory', location: 'San Salvador', date: '[DATE]',
-      intro: '[PROJECT DESCRIPTION]', context: '',
-      photos: P('stories', 'san-salvador', ['full', 'tall', 'tall', 'half', 'half']) },
-    { id: 'disappearing-trades', title: 'DISAPPEARING TRADES', tags: 'Work · Memory · Everyday life', location: 'San Salvador', date: '[DATE]',
-      intro: '[PROJECT DESCRIPTION]', context: '',
-      photos: P('stories', 'disappearing-trades', ['wide', 'tall', 'half', 'half']) }
-  ],
+  STORIES: [], // vacío = la página STORIES se oculta. Para añadir un proyecto: { id:'x', title:'TÍTULO', tags:'', location:'', date:'', intro:'', context:'', photos: F(['DSC_0001']) }
 
   /* EDITORIAL — GatoEncerrado */
   GATO_INTRO: 'Selected photographs produced during my work as a photographer for GatoEncerrado, covering environmental, cultural and social stories in El Salvador.',
@@ -65,11 +48,11 @@ window.SITE = {
   // Títulos deducidos de las URLs: revísalos contra los títulos publicados.
   // Fotos: images/editorial/gatoencerrado-<clave>-01.jpg ...
   GATO: [
-    { title: 'Capturas, Ebenezer y expandilleros bajo el régimen', date: 'May 2022', url: 'https://gatoencerrado.news/2022/05/05/capturas-ebenezer-expandilleros-regimen/', photos: P('editorial', 'gatoencerrado-ebenezer', ['wide', 'tall'], { location: 'El Salvador' }) },
-    { title: 'Las mujeres que florecen en el Corredor Seco', date: 'June 2022', url: 'https://gatoencerrado.news/2022/06/15/las-mujeres-que-florecer-en-el-corredor-seco/', photos: P('editorial', 'gatoencerrado-corredor-seco', ['wide', 'tall'], { location: 'Corredor Seco' }) },
-    { title: 'Sisimitepec, la comunidad nahua que lucha por el río Sensunapán y las tierras ancestrales', date: 'February 2022', url: 'https://gatoencerrado.news/2022/02/08/sisimitepec-la-comunidad-nahua-que-lucha-por-el-rio-sensunapan-y-las-tierras-ancestrales/', photos: P('editorial', 'gatoencerrado-sisimitepec', ['wide', 'tall'], { location: 'Sisimitepec' }) },
-    { title: 'La resistencia en el río Sensunapán la hacen las comunidades indígenas', date: 'June 2021', url: 'https://gatoencerrado.news/2021/06/19/la-resistencia-en-el-rio-sensunapan-la-hacen-las-comunidades-indigenas/', photos: P('editorial', 'gatoencerrado-sensunapan', ['wide', 'tall'], { location: 'Río Sensunapán' }) },
-    { title: 'Cuidar el manglar para enfrentar la crisis climática', date: 'June 2021', url: 'https://gatoencerrado.news/2021/06/11/cuidar-el-manglar-para-enfrentar-la-crisis-climatica/', photos: P('editorial', 'gatoencerrado-manglar', ['wide', 'tall'], { location: 'El Salvador' }) },
-    { title: 'El peregrinaje del juez y las víctimas del caso El Mozote por acceder a los archivos militares', date: 'November 2020', url: 'https://gatoencerrado.news/2020/11/05/el-peregrinaje-del-juez-y-las-victimas-del-caso-el-mozote-por-acceder-a-los-archivos-militares/', photos: P('editorial', 'gatoencerrado-el-mozote', ['wide', 'tall'], { location: 'El Mozote' }) }
+    { title: 'Capturas, Ebenezer y expandilleros bajo el régimen', date: 'May 2022', url: 'https://gatoencerrado.news/2022/05/05/capturas-ebenezer-expandilleros-regimen/', photos: [] },
+    { title: 'Las mujeres que florecen en el Corredor Seco', date: 'June 2022', url: 'https://gatoencerrado.news/2022/06/15/las-mujeres-que-florecer-en-el-corredor-seco/', photos: [] },
+    { title: 'Sisimitepec, la comunidad nahua que lucha por el río Sensunapán y las tierras ancestrales', date: 'February 2022', url: 'https://gatoencerrado.news/2022/02/08/sisimitepec-la-comunidad-nahua-que-lucha-por-el-rio-sensunapan-y-las-tierras-ancestrales/', photos: [] },
+    { title: 'La resistencia en el río Sensunapán la hacen las comunidades indígenas', date: 'June 2021', url: 'https://gatoencerrado.news/2021/06/19/la-resistencia-en-el-rio-sensunapan-la-hacen-las-comunidades-indigenas/', photos: [] },
+    { title: 'Cuidar el manglar para enfrentar la crisis climática', date: 'June 2021', url: 'https://gatoencerrado.news/2021/06/11/cuidar-el-manglar-para-enfrentar-la-crisis-climatica/', photos: [] },
+    { title: 'El peregrinaje del juez y las víctimas del caso El Mozote por acceder a los archivos militares', date: 'November 2020', url: 'https://gatoencerrado.news/2020/11/05/el-peregrinaje-del-juez-y-las-victimas-del-caso-el-mozote-por-acceder-a-los-archivos-militares/', photos: [] }
   ]
 };
