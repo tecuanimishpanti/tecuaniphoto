@@ -1,0 +1,65 @@
+/* COLORES: cambia aquí. --accent es el único color de acento (enlaces, página activa, foco). */
+:root {
+  --bg: #fff; --fg: #1a1a1a; --mute: #666; --line: #e3e3e3; --soft: #f1f1f1;
+  --accent: #2f4f7f;
+  /* TIPOGRAFÍAS: deben coincidir con la línea de Google Fonts en cada HTML */
+  --serif: 'Instrument Serif', Georgia, serif;
+  --sans: 'Inter', system-ui, sans-serif;
+  --max: 1320px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.65 var(--sans); }
+a { color: inherit; text-underline-offset: 3px; }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.skip { position: absolute; left: -999px; } .skip:focus { left: 8px; top: 8px; background: #fff; padding: 8px; z-index: 9; }
+
+header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px 32px; max-width: var(--max); margin: auto; padding: 22px 24px; }
+.brand { font: 26px var(--serif); letter-spacing: .05em; text-decoration: none; }
+nav a { display: inline-block; margin-left: 24px; padding: 10px 0; font-size: 13px; letter-spacing: .08em; text-decoration: none; border-bottom: 1px solid transparent; }
+nav a[aria-current] { color: var(--accent); border-color: var(--accent); }
+
+main { max-width: var(--max); margin: auto; padding: 0 24px 96px; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.1; margin: 0; }
+h1 { font-size: clamp(34px, 6vw, 64px); margin: 32px 0 16px; letter-spacing: .02em; }
+h2 { font-size: clamp(24px, 3.4vw, 36px); margin: 72px 0 12px; letter-spacing: .03em; }
+h3 { font-size: 26px; margin-bottom: 6px; }
+.meta, .loc, figcaption { color: var(--mute); font-size: 13px; line-height: 1.5; }
+.lede { font: clamp(20px, 2.4vw, 26px)/1.45 var(--serif); max-width: 46em; margin: 24px 0 40px; }
+.roles { font-size: 13px; letter-spacing: .12em; margin: 0 0 6px; }
+.intro { padding: 24px 0 28px; } .intro h1 { margin-top: 0; }
+
+.gal { display: grid; grid-template-columns: repeat(12, 1fr); gap: 40px 24px; align-items: end; margin-top: 28px; }
+figure { margin: 0; grid-column: span 12; }
+figure.wide { grid-column: span 8; } figure.tall { grid-column: span 4; } figure.half { grid-column: span 6; }
+main > figure { margin-bottom: 8px; }
+.open { display: block; width: 100%; padding: 0; border: 0; background: var(--soft); cursor: zoom-in; }
+figure img { display: block; width: 100%; height: auto; }
+main > figure img { max-height: 82vh; object-fit: cover; }
+.missing { display: flex; align-items: center; justify-content: center; width: 100%; background: var(--soft); color: var(--mute); font-size: 12px; padding: 12px; text-align: center; }
+figcaption { margin-top: 8px; }
+
+.toc a { margin-right: 20px; font-size: 13px; letter-spacing: .06em; }
+.story h2 { margin-top: 88px; }
+.ctx, .text { max-width: 40em; } .text h2 { margin-top: 56px; font-size: 26px; }
+.piece { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); } .piece h3 a { text-decoration: none; }
+.more a { margin-right: 20px; }
+.mail { font: clamp(26px, 4vw, 40px) var(--serif); margin: 8px 0; }
+dt { font-weight: 500; margin-top: 12px; } dd { margin: 0; color: var(--mute); }
+footer { display: flex; flex-wrap: wrap; gap: 8px 28px; max-width: var(--max); margin: auto; padding: 24px; border-top: 1px solid var(--line); font-size: 13px; color: var(--mute); }
+
+dialog { width: 100vw; max-width: 100vw; height: 100vh; max-height: 100vh; margin: 0; padding: 48px 56px 16px; border: 0; background: #000; color: #ddd; text-align: center; }
+dialog[open] { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+dialog img { max-width: 100%; max-height: calc(100vh - 120px); object-fit: contain; }
+dialog p { font-size: 13px; margin: 12px 0 0; }
+dialog button { position: absolute; background: none; border: 0; color: #fff; font-size: 40px; width: 52px; height: 64px; cursor: pointer; }
+.x { top: 4px; right: 4px; } .pv { left: 0; top: 50%; } .nx { right: 0; top: 50%; }
+
+@media (max-width: 760px) {
+  header, main, footer { padding-left: 16px; padding-right: 16px; }
+  nav a { margin: 0 18px 0 0; }
+  .gal { gap: 28px 12px; }
+  figure.wide, figure.tall { grid-column: span 12; } figure.half { grid-column: span 6; }
+  dialog { padding: 48px 8px 8px; } .pv, .nx { top: auto; bottom: 8px; }
+}
+@media (prefers-reduced-motion: no-preference) { main > figure img { animation: in .6s ease-out; } @keyframes in { from { opacity: 0; } } }
