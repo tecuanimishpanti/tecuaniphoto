@@ -21,7 +21,7 @@ window.SITE = {
   GETTY_USERNAME: '',   // Escribe aquí tu usuario/enlace de Getty; mientras esté vacío, la sección no se muestra
   GETTY_URL: '',        // Enlace a tu perfil/galería de Getty
   LOCATION: 'EL SALVADOR · CENTRAL AMERICA',
-  SITE_URL: 'https://tecuanimishpanti.github.io/',
+  SITE_URL: 'https://tecuanimishpanti.github.io/tecuaniphoto/',
   BIO: 'Documentary photographer and visual storyteller based in El Salvador, working across Central America. My work explores culture, territory, memory, religion and everyday life through photography and documentary research.',
   ABOUT_TEXT: ['[BIOGRAPHICAL TEXT — two or three short paragraphs]'],
   EXPERIENCE: [
