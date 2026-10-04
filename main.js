@@ -8,7 +8,7 @@
   const gal = (list, g) => (G[g] = list, `<div class="gal">${list.map((p, i) => fig(p, g, i)).join('')}</div>`);
 
   const NAV = [['WORK', 'work'], ['STORIES', 'stories'], ['EDITORIAL', 'editorial'], ['ABOUT', 'about'], ['CONTACT', 'contact']];
-  const head = `<a class="skip" href="#main">Skip to content</a><header><a class="brand" href="index.html">${S.NAME}</a><nav aria-label="Main">${NAV.filter(([t, p]) => p !== 'stories' || S.STORIES.length).map(([t, p]) => `<a href="${p}.html"${p === pg ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</nav></header>`;
+  const head = `<a class="skip" href="#main">Skip to content</a><header><a class="brand" href="index.html" aria-label="${S.NAME} — home" title="${S.NAME}">${S.MONOGRAM || 'TM'}</a><nav aria-label="Main">${NAV.filter(([t, p]) => p !== 'stories' || S.STORIES.length).map(([t, p]) => `<a href="${p}.html"${p === pg ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</nav></header>`;
   const foot = `<footer><a href="mailto:${S.EMAIL}">${S.EMAIL}</a><a href="${S.INSTAGRAM}" rel="noopener">Instagram</a><span>© ${new Date().getFullYear()} ${S.NAME}. All rights reserved.</span></footer>`;
 
   const pages = {
