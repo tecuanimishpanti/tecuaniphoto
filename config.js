@@ -3,9 +3,9 @@
    Las rutas de imagen son relativas a /images/
    ============================================================ */
 
-/* FOTOS con nombre genérico. Sube todas a la carpeta /images/ del repositorio.
-   Si tus archivos terminan en .JPG (mayúsculas), cambia EXT a '.JPG'. */
-const EXT = '.jpg';
+/* FOTOS con nombre genérico. Están en la raíz del repositorio (ver IMG_PATH).
+   Debe coincidir exacto con tus archivos (.jpeg, .jpg o .JPG). */
+const EXT = '.jpeg';
 const CYCLE = ['full', 'half', 'half', 'half', 'half', 'full']; // ritmo visual; cámbialo si quieres
 /* F(['DSC_6003','DSC_6004'], {title, location, date, caption, alt}) crea las fotos. Los campos son opcionales. */
 const F = (names, o = {}) => names.map((n, i) => ({
@@ -14,6 +14,7 @@ const F = (names, o = {}) => names.map((n, i) => ({
 }));
 
 window.SITE = {
+  IMG_PATH: '', // carpeta de las fotos: '' = raíz del repositorio; 'images/' si las mueves a una carpeta images
   NAME: 'TECUANI MISHPANTI',
   EMAIL: 'tecuanimishpanti@gmail.com',
   INSTAGRAM: 'https://www.instagram.com/tecuanimishpanti/',

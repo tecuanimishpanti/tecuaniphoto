@@ -1,10 +1,10 @@
 /* Renderiza las páginas a partir de js/config.js. Normalmente no necesitas editar este archivo. */
 (() => {
-  const S = window.SITE, G = {}, pg = document.body.dataset.page;
+  const S = window.SITE, IMG = S.IMG_PATH ?? 'images/', G = {}, pg = document.body.dataset.page;
 
   // Una foto. Si el archivo no existe aún, muestra un marcador con su nombre.
   const capt = p => [p.title, p.location, p.date].filter(Boolean).join(', ') + (p.caption ? (p.title || p.location || p.date ? '. ' : '') + p.caption : '');
-  const fig = (p, g, i, eager) => `<figure class="${p.layout}"><button class="open" data-g="${g}" data-i="${i}" aria-label="View larger: ${p.title || 'photograph'}"><img src="images/${p.file}" alt="${p.alt}" width="${p.w}" height="${p.h}" ${eager ? '' : 'loading="lazy"'} onerror="this.outerHTML='<span class=missing style=aspect-ratio:${p.w}/${p.h}>${p.file}</span>'"></button>${capt(p) ? `<figcaption>${capt(p)}</figcaption>` : ''}</figure>`;
+  const fig = (p, g, i, eager) => `<figure class="${p.layout}"><button class="open" data-g="${g}" data-i="${i}" aria-label="View larger: ${p.title || 'photograph'}"><img src="${IMG}${p.file}" alt="${p.alt}" width="${p.w}" height="${p.h}" ${eager ? '' : 'loading="lazy"'} onerror="this.outerHTML='<span class=missing style=aspect-ratio:${p.w}/${p.h}>${p.file}</span>'"></button>${capt(p) ? `<figcaption>${capt(p)}</figcaption>` : ''}</figure>`;
   const gal = (list, g) => (G[g] = list, `<div class="gal">${list.map((p, i) => fig(p, g, i)).join('')}</div>`);
 
   const NAV = [['WORK', 'work'], ['STORIES', 'stories'], ['EDITORIAL', 'editorial'], ['ABOUT', 'about'], ['CONTACT', 'contact']];
@@ -26,7 +26,7 @@
   // Lightbox
   const lb = document.getElementById('lb'), im = lb.querySelector('img'), cap = lb.querySelector('p');
   let cur, idx;
-  const show = (g, i) => { cur = g; idx = (i + G[g].length) % G[g].length; const p = G[g][idx]; im.src = 'images/' + p.file; im.alt = p.alt; cap.textContent = capt(p); };
+  const show = (g, i) => { cur = g; idx = (i + G[g].length) % G[g].length; const p = G[g][idx]; im.src = IMG + p.file; im.alt = p.alt; cap.textContent = capt(p); };
   document.addEventListener('click', e => {
     const b = e.target.closest('.open');
     if (b) { show(b.dataset.g, +b.dataset.i); lb.showModal(); return; }
