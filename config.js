@@ -27,12 +27,10 @@ window.SITE = {
   LOCATION: 'EL SALVADOR · CENTRAL AMERICA',
   SITE_URL: 'https://tecuanimishpanti.github.io/tecuaniphoto/',
   BIO: 'Documentary photographer and visual storyteller based in El Salvador, working across Central America. My work explores culture, territory, memory, religion and everyday life through photography and documentary research.',
-  ABOUT_TEXT: ['[BIOGRAPHICAL TEXT — two or three short paragraphs]'],
-  EXPERIENCE: [
-    ['GatoEncerrado', 'Photographer, 2019–2022']
-    // Añade aquí tu experiencia actual: ['[ORGANIZACIÓN]', '[ROL, AÑOS]']
+  ABOUT_TEXT: [
+    "I am a documentary photographer and photojournalist based in San Salvador, working across El Salvador and Central America. My work looks at territory, memory, religion and everyday life: communities defending their land and rivers, popular faith, and the working life of San Salvador's markets, barrios and historic center.",
+    "From 2019 to 2022 I worked as a photojournalist at GatoEncerrado, covering Indigenous worldviews, the defense of territory, forced displacement, cultural reporting and transitional justice. Since then I have accompanied and documented the defense of territory by Indigenous communities in western El Salvador, and my work has also appeared in Otras Miradas."
   ],
-  CAPABILITIES: ['Photography', 'Photojournalism', 'Documentary research', 'Interviews', 'Field production', 'Video', 'Drone photography', 'Lightroom'],
 
   /* Foto principal de la portada */
   HERO: { file: '_DSF6373' + EXT, title: '', location: '', date: '', caption: '', alt: "An older man in a straw hat and red shirt climbs a mossy rock face holding a rope", w: 1600, h: 1067, layout: 'full' },
