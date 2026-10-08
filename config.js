@@ -69,7 +69,7 @@ window.SITE = {
     P('DSC_6538', { layout: 'half', location: 'Mercado Central, San Salvador', alt: "A poultry vendor hands a bagged order across a counter piled with dressed chickens, under a sign that reads NELLY" }),
     P('DSC_7777', { layout: 'full', alt: "A weathered corner building with rusted awnings and a red iron gate; a man in a red cap sits on the curb step" }),
     P('DSC_7797', { layout: 'half', alt: "A man sits in a doorway among stacks of used books, with a wooden shelf of paperbacks displayed beside him" }),
-    P('laperferia', { layout: 'half', date: 'May 7, 2026', alt: "A vendor in a plaid shirt and a baseball cap stands beside a doorway hung with tools, among books, a clay figure, a cash box of jewelry and other secondhand goods" }),
+    P('DSC_5640', { layout: 'half', date: 'May 7, 2026', alt: "A vendor in a plaid shirt and a baseball cap stands beside a doorway hung with tools, among books, a clay figure, a cash box of jewelry and other secondhand goods" }),
     P('DSC_5627', { layout: 'half', date: 'May 7, 2026', alt: "A hand holds a small set of antique brass bells against a turquoise wall" }),
     P('DSC_5639', { layout: 'half', date: 'May 7, 2026', alt: "A worn Sagrada Biblia leans on a tray beside a clay figure and an open cash box of jewelry, against a turquoise wall" }),
 
