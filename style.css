@@ -63,3 +63,4 @@ dialog button { position: absolute; background: none; border: 0; color: #fff; fo
   dialog { padding: 48px 8px 8px; } .pv, .nx { top: auto; bottom: 8px; }
 }
 @media (prefers-reduced-motion: no-preference) { main > figure img { animation: in .6s ease-out; } @keyframes in { from { opacity: 0; } } }
+.intro + figure img { object-position: center 20%; }
