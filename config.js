@@ -33,7 +33,7 @@ window.SITE = {
   ],
 
   /* Foto principal de la portada */
-   HERO: { file: '_DSF3176' + EXT, title: 'Reinaldo Zacapa, Indigenous leader from Nahuizalco', location: 'Sensunapán River, Sonsonate', date: 'September 2023', caption: '', alt: "A man in a gray cap and a dark striped polo holds two spiny fruits against dense green forest", w: 1600, h: 1067, layout: 'full' },
+  HERO: { file: '_DSF3176' + EXT, title: 'Reinaldo Zacapa, Indigenous leader from Nahuizalco', location: 'Sensunapán River, Sonsonate', date: 'September 2023', caption: '', alt: "A man in a gray cap and a dark striped polo holds two spiny fruits against dense green forest", w: 1600, h: 1067, layout: 'full' },
 
   /* ============================================================
      WORK — 26 fotos en este orden. Cuatro bloques (sin títulos de sección):
