@@ -14,7 +14,10 @@ const F = (names, o = {}) => names.map((n, i) => ({
 }));
 
 /* P('nombre', {layout, location, date, caption, alt}) crea UNA foto con su propio layout.
-   layout: 'full' = ancho completo, 'half' = mitad. Los campos vacíos no se muestran en el pie de foto. */
+   layout: 'full' = ancho completo, 'half' = mitad.
+   IMPORTANTE: el pie de foto visible se arma con title + location + date + caption.
+   El campo alt NO se muestra: es solo la descripción oculta para accesibilidad.
+   Los campos vacíos no se muestran en el pie de foto. */
 const P = (name, o = {}) => F([name], o)[0];
 
 /* ------------------------------------------------------------
@@ -53,32 +56,32 @@ window.SITE = {
   WORK: [
 
     /* ---- 1) TERRITORIO Y COMUNIDAD ---- */
-    P('_DSF6373', { layout: 'full', ...TERRITORIO, alt: "An older man in a straw hat and red shirt climbs a mossy rock face holding a rope, a woven bag over his shoulder" }),
-    P('_DSF6769', { layout: 'half', ...TERRITORIO, alt: "A narrow green canyon with a muddy river running between boulders and a dark cave opening on the right" }),
+    P('_DSF6373', { layout: 'full', ...TERRITORIO, caption: "An older man climbs a mossy rock face holding a rope.", alt: "An older man in a straw hat and red shirt climbs a mossy rock face holding a rope, a woven bag over his shoulder" }),
+    P('_DSF6769', { layout: 'half', ...TERRITORIO, caption: "A narrow canyon with a river and a cave opening.", alt: "A narrow green canyon with a muddy river running between boulders and a dark cave opening on the right" }),
     P('DSC_7698', { layout: 'half', ...CULTIVO, caption: "Communal planting by the Sisimitepec and Pushtan communities.", alt: "A man kneels in a field planting a banana seedling in dark soil while two others work behind him" }),
-    P('DSC_7742', { layout: 'half', ...CULTIVO, alt: "Two farmers in hats stand among cane stalks, each with a plastic bottle of seeds hanging from his neck; one of them smiles" }),
-    P('DSC_7760', { layout: 'half', ...CULTIVO, alt: "A smiling farmer in a pale shirt and rubber boots walks toward the camera with a hoe while others work the field behind him" }),
+    P('DSC_7742', { layout: 'half', ...CULTIVO, caption: "Two farmers with bottles of seeds hanging from their necks.", alt: "Two farmers in hats stand among cane stalks, each with a plastic bottle of seeds hanging from his neck; one of them smiles" }),
+    P('DSC_7760', { layout: 'half', ...CULTIVO, caption: "A farmer walks toward the camera with a hoe.", alt: "A smiling farmer in a pale shirt and rubber boots walks toward the camera with a hoe while others work the field behind him" }),
     P('DSC_7106', { layout: 'full', ...CEREMONIA, caption: "A Nahua ceremony for the spring equinox, a thanksgiving to Tunancin, the Moon.", alt: "People gather around a ceremonial fire ringed with stones and offerings of flowers and fruit in a forest clearing, holding seeds in their hands" }),
-    P('DSC_7110', { layout: 'half', ...CEREMONIA, alt: "A man in an orange shirt and straw hat kneels with open hands before the ceremonial fire while a drummer and a guitarist stand behind him" }),
-    P('DSC_7112', { layout: 'half', ...CEREMONIA, alt: "A woman holds a baby near the ceremonial fire while a girl in an orange dress stands beside her" }),
-    P('DSC_7129', { layout: 'full', ...CEREMONIA, alt: "A ceremony leader in a red headscarf offers seeds from a gourd bowl to participants; one woman wears a T-shirt reading Aquí vivimos, aquí resistimos" }),
+    P('DSC_7110', { layout: 'half', ...CEREMONIA, caption: "A man kneels with open hands before the ceremonial fire.", alt: "A man in an orange shirt and straw hat kneels with open hands before the ceremonial fire while a drummer and a guitarist stand behind him" }),
+    P('DSC_7112', { layout: 'half', ...CEREMONIA, caption: "A woman holds a baby near the ceremonial fire.", alt: "A woman holds a baby near the ceremonial fire while a girl in an orange dress stands beside her" }),
+    P('DSC_7129', { layout: 'full', ...CEREMONIA, caption: "The ceremony leader offers seeds to the participants.", alt: "A ceremony leader in a red headscarf offers seeds from a gourd bowl to participants; one woman wears a T-shirt reading Aquí vivimos, aquí resistimos" }),
 
     /* ---- 2) HISTORIANTES ---- */
     P('DSC_7610', { layout: 'full', ...HISTORIANTES, caption: "Historiantes during the Santa Cruz de Roma festival.", alt: "Costumed young dancers with machetes cross a cobbled street in front of a mural of an elder in a coin-decorated headdress, as a procession carries a flower-covered cross" }),
-    P('DSC_7507', { layout: 'half', ...HISTORIANTES, alt: "Two young dancers in satin capes, sunglasses and ornate headdresses march with machetes down a cobbled street" }),
-    P('DSC_7577', { layout: 'half', ...HISTORIANTES, alt: "Close portrait of a young dancer in mirrored sunglasses beneath a gourd helmet fringed with old Salvadoran coins" }),
-    P('DSC_7437', { layout: 'full', ...HISTORIANTES, alt: "A dancer in a red-faced mask and lavender satin cape holds a decorated gourd topped with a small painted figure carrying a bell and a cross" }),
+    P('DSC_7507', { layout: 'half', ...HISTORIANTES, caption: "Two young historiantes march down a cobbled street.", alt: "Two young dancers in satin capes, sunglasses and ornate headdresses march with machetes down a cobbled street" }),
+    P('DSC_7577', { layout: 'half', ...HISTORIANTES, caption: "A young historiante beneath a gourd helmet fringed with old coins.", alt: "Close portrait of a young dancer in mirrored sunglasses beneath a gourd helmet fringed with old Salvadoran coins" }),
+    P('DSC_7437', { layout: 'full', ...HISTORIANTES, caption: "A red-faced mask and a decorated gourd topped with a small painted figure.", alt: "A dancer in a red-faced mask and lavender satin cape holds a decorated gourd topped with a small painted figure carrying a bell and a cross" }),
 
     /* ---- 3) CIUDAD ---- */
-    P('DSC_5556', { layout: 'half', location: 'La Tiendona market', date: 'May 7, 2026', alt: "A fishmonger in an apron lifts a large red snapper from a crate in front of a chest of ice" }),
-    P('DSC_5575', { layout: 'half', location: 'La Tiendona market', date: 'May 7, 2026', alt: "A seated corn vendor in a pale blue T-shirt rests his hand on a net sack of fresh corn in his stall" }),
+    P('DSC_5556', { layout: 'half', location: 'La Tiendona market', date: 'May 7, 2026', caption: "A fishmonger lifts a red snapper from a crate.", alt: "A fishmonger in an apron lifts a large red snapper from a crate in front of a chest of ice" }),
+    P('DSC_5575', { layout: 'half', location: 'La Tiendona market', date: 'May 7, 2026', caption: "A corn vendor seated in his stall.", alt: "A seated corn vendor in a pale blue T-shirt rests his hand on a net sack of fresh corn in his stall" }),
     P('DSC_6372', { layout: 'half', location: 'Mercado Central, San Salvador', caption: "Nelly Salazar at her poultry stall, a trade inherited from her mother.", alt: "A smiling poultry vendor leans on a doorframe and holds up a dressed chicken garnished with parsley and small tomatoes" }),
-    P('DSC_6538', { layout: 'half', location: 'Mercado Central, San Salvador', alt: "A poultry vendor hands a bagged order across a counter piled with dressed chickens, under a sign that reads NELLY" }),
-    P('DSC_7777', { layout: 'full', location: '', date: '', alt: "A weathered corner building with rusted awnings and a red iron gate; a man in a red cap sits on the curb step" }),  // PENDIENTE: lugar y fecha
-    P('DSC_7797', { layout: 'half', location: '', date: '', alt: "A man sits in a doorway among stacks of used books, with a wooden shelf of paperbacks displayed beside him" }),  // PENDIENTE: lugar y fecha
-    P('DSC_5640', { layout: 'half', location: '', date: 'May 7, 2026', alt: "A vendor in a plaid shirt and a baseball cap stands beside a doorway hung with tools, among books, a clay figure, a cash box of jewelry and other secondhand goods" }),  // PENDIENTE: lugar
-    P('DSC_5627', { layout: 'half', location: '', date: 'May 7, 2026', alt: "A hand holds a small set of antique brass bells against a turquoise wall" }),  // PENDIENTE: lugar
-    P('DSC_5639', { layout: 'half', location: '', date: 'May 7, 2026', alt: "A worn Sagrada Biblia leans on a tray beside a clay figure and an open cash box of jewelry, against a turquoise wall" }),  // PENDIENTE: lugar
+    P('DSC_6538', { layout: 'half', location: 'Mercado Central, San Salvador', caption: "A poultry vendor hands a bagged order across the counter.", alt: "A poultry vendor hands a bagged order across a counter piled with dressed chickens, under a sign that reads NELLY" }),
+    P('DSC_7777', { layout: 'full', location: '', date: '', caption: "A weathered corner building; a man sits on the curb step.", alt: "A weathered corner building with rusted awnings and a red iron gate; a man in a red cap sits on the curb step" }),  // PENDIENTE: lugar y fecha
+    P('DSC_7797', { layout: 'half', location: '', date: '', caption: "A man sits in a doorway among stacks of used books.", alt: "A man sits in a doorway among stacks of used books, with a wooden shelf of paperbacks displayed beside him" }),  // PENDIENTE: lugar y fecha
+    P('DSC_5640', { layout: 'half', location: '', date: 'May 7, 2026', caption: "A vendor stands beside a doorway hung with tools and secondhand goods.", alt: "A vendor in a plaid shirt and a baseball cap stands beside a doorway hung with tools, among books, a clay figure, a cash box of jewelry and other secondhand goods" }),  // PENDIENTE: lugar
+    P('DSC_5627', { layout: 'half', location: '', date: 'May 7, 2026', caption: "A hand holds a set of antique brass bells.", alt: "A hand holds a small set of antique brass bells against a turquoise wall" }),  // PENDIENTE: lugar
+    P('DSC_5639', { layout: 'half', location: '', date: 'May 7, 2026', caption: "A worn Sagrada Biblia beside a clay figure and a cash box of jewelry.", alt: "A worn Sagrada Biblia leans on a tray beside a clay figure and an open cash box of jewelry, against a turquoise wall" }),  // PENDIENTE: lugar
 
     /* ---- 4) RÉGIMEN DE EXCEPCIÓN ---- */
     P('_DSC2705', { layout: 'full', location: 'Calle Sisimiles, San Salvador', date: 'May 4, 2022', caption: "Police secure the street while an officer photographs detainees during a state-of-exception raid on a rehabilitation shelter.", alt: "Armed police officers stand in a line across a street at dusk while one photographs three men seated in the bed of a police pickup" }),
