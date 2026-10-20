@@ -27,7 +27,7 @@ const P = (name, o = {}) => F([name], o)[0];
 const CULTIVO   = { location: 'Nahuizalco, Sonsonate', date: 'September 20, 2026' };
 const CEREMONIA = { location: 'Sisimitepec, Nahuizalco', date: '' };   // PENDIENTE: fecha exacta y año (equinoccio de primavera)
 const HISTORIANTES = { location: 'Panchimalco', date: '' };            // PENDIENTE: fecha exacta y año (Santa Cruz de Roma)
-const TERRITORIO = { location: '', date: '' };                         // PENDIENTE: lugar y fecha del hombre en la roca y del cañón
+const TERRITORIO = { location: 'Nahuizalco, Sonsonate', date: 'August 4, 2023' };
 
 window.SITE = {
   IMG_PATH: '', // '' = fotos en la raíz del repositorio; 'images/' si algún día las mueves a una carpeta
@@ -77,11 +77,11 @@ window.SITE = {
     P('DSC_5575', { layout: 'half', location: 'La Tiendona market', date: 'May 7, 2026', caption: "A corn vendor seated in his stall.", alt: "A seated corn vendor in a pale blue T-shirt rests his hand on a net sack of fresh corn in his stall" }),
     P('DSC_6372', { layout: 'half', location: 'Mercado Central, San Salvador', caption: "Nelly Salazar at her poultry stall, a trade inherited from her mother.", alt: "A smiling poultry vendor leans on a doorframe and holds up a dressed chicken garnished with parsley and small tomatoes" }),
     P('DSC_6538', { layout: 'half', location: 'Mercado Central, San Salvador', caption: "A poultry vendor hands a bagged order across the counter.", alt: "A poultry vendor hands a bagged order across a counter piled with dressed chickens, under a sign that reads NELLY" }),
-    P('DSC_7777', { layout: 'full', location: '', date: '', caption: "A weathered corner building; a man sits on the curb step.", alt: "A weathered corner building with rusted awnings and a red iron gate; a man in a red cap sits on the curb step" }),  // PENDIENTE: lugar y fecha
-    P('DSC_7797', { layout: 'half', location: '', date: '', caption: "A man sits in a doorway among stacks of used books.", alt: "A man sits in a doorway among stacks of used books, with a wooden shelf of paperbacks displayed beside him" }),  // PENDIENTE: lugar y fecha
-    P('DSC_5640', { layout: 'half', location: '', date: 'May 7, 2026', caption: "A vendor stands beside a doorway hung with tools and secondhand goods.", alt: "A vendor in a plaid shirt and a baseball cap stands beside a doorway hung with tools, among books, a clay figure, a cash box of jewelry and other secondhand goods" }),  // PENDIENTE: lugar
-    P('DSC_5627', { layout: 'half', location: '', date: 'May 7, 2026', caption: "A hand holds a set of antique brass bells.", alt: "A hand holds a small set of antique brass bells against a turquoise wall" }),  // PENDIENTE: lugar
-    P('DSC_5639', { layout: 'half', location: '', date: 'May 7, 2026', caption: "A worn Sagrada Biblia beside a clay figure and a cash box of jewelry.", alt: "A worn Sagrada Biblia leans on a tray beside a clay figure and an open cash box of jewelry, against a turquoise wall" }),  // PENDIENTE: lugar
+    P('DSC_7777', { layout: 'full', location: 'San Salvador', date: 'September 29, 2026', caption: "A weathered corner building; a man sits on the curb step.", alt: "A weathered corner building with rusted awnings and a red iron gate; a man in a red cap sits on the curb step" }),
+    P('DSC_7797', { layout: 'half', location: 'San Salvador', date: 'September 29, 2026', caption: "A man sits in a doorway among stacks of used books.", alt: "A man sits in a doorway among stacks of used books, with a wooden shelf of paperbacks displayed beside him" }),
+    P('DSC_5640', { layout: 'half', location: 'San Salvador', date: 'May 7, 2026', caption: "A vendor stands beside a doorway hung with tools and secondhand goods.", alt: "A vendor in a plaid shirt and a baseball cap stands beside a doorway hung with tools, among books, a clay figure, a cash box of jewelry and other secondhand goods" }),
+    P('DSC_5627', { layout: 'half', location: 'San Salvador', date: 'May 7, 2026', caption: "A hand holds a set of antique brass bells.", alt: "A hand holds a small set of antique brass bells against a turquoise wall" }),
+    P('DSC_5639', { layout: 'half', location: 'San Salvador', date: 'May 7, 2026', caption: "A worn Sagrada Biblia beside a clay figure and a cash box of jewelry.", alt: "A worn Sagrada Biblia leans on a tray beside a clay figure and an open cash box of jewelry, against a turquoise wall" }),
 
     /* ---- 4) RÉGIMEN DE EXCEPCIÓN ---- */
     P('_DSC2705', { layout: 'full', location: 'Calle Sisimiles, San Salvador', date: 'May 4, 2022', caption: "Police secure the street while an officer photographs detainees during a state-of-exception raid on a rehabilitation shelter.", alt: "Armed police officers stand in a line across a street at dusk while one photographs three men seated in the bed of a police pickup" }),
