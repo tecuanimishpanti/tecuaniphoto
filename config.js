@@ -42,35 +42,33 @@ window.SITE = {
      Los campos location/date vacíos ('') están pendientes de confirmar: no se muestran.
      ============================================================ */
   WORK: [
-
-    /* ---- 1) TERRITORIO Y COMUNIDAD ---- */
-    P('_DSF6373', { layout: 'full', alt: "An older man in a straw hat and red shirt climbs a mossy rock face holding a rope, a woven bag over his shoulder" }),
-    P('_DSF6769', { layout: 'half', alt: "A narrow green canyon with a muddy river running between boulders and a dark cave opening on the right" }),
-    P('DSC_7698', { layout: 'half', alt: "A man kneels in a field planting a banana seedling in dark soil while two others work behind him" }),
-    P('DSC_7742', { layout: 'half', alt: "Two farmers in hats stand among cane stalks, each with a plastic bottle of seeds hanging from his neck; one of them smiles" }),
-    P('DSC_7760', { layout: 'half', alt: "A smiling farmer in a pale shirt and rubber boots walks toward the camera with a hoe while others work the field behind him" }),
-    P('DSC_7106', { layout: 'full', alt: "People gather around a ceremonial fire ringed with stones and offerings of flowers and fruit in a forest clearing, holding seeds in their hands" }),
-    P('DSC_7110', { layout: 'half', alt: "A man in an orange shirt and straw hat kneels with open hands before the ceremonial fire while a drummer and a guitarist stand behind him" }),
-    P('DSC_7112', { layout: 'half', alt: "A woman holds a baby near the ceremonial fire while a girl in an orange dress stands beside her" }),
-    P('DSC_7129', { layout: 'full', alt: "A ceremony leader in a red headscarf offers seeds from a gourd bowl to participants; one woman wears a T-shirt reading Aquí vivimos, aquí resistimos" }),
+/* ---- 1) TERRITORIO Y COMUNIDAD ---- */
+    P('_DSF6373', { layout: 'full', location: 'Sonsonate', date: 'September 2023', alt: "An older man in a straw hat and red shirt climbs a mossy rock face holding a rope, a woven bag over his shoulder" }),
+    P('_DSF6769', { layout: 'half', location: 'Sensunapán River, Sonsonate', date: 'September 2023', alt: "A narrow green canyon with a muddy river running between boulders and a dark cave opening on the right" }),
+    P('DSC_7698', { layout: 'half', location: 'Sisimitepec, Sonsonate', date: 'September 2023', alt: "A man kneels in a field planting a banana seedling in dark soil while two others work behind him" }),
+    P('DSC_7742', { layout: 'half', location: 'Sisimitepec, Sonsonate', date: 'September 2023', alt: "Two farmers in hats stand among cane stalks, each with a plastic bottle of seeds hanging from his neck; one of them smiles" }),
+    P('DSC_7760', { layout: 'half', location: 'Sisimitepec, Sonsonate', date: 'September 2023', alt: "A smiling farmer in a pale shirt and rubber boots walks toward the camera with a hoe while others work the field behind him" }),
+    P('DSC_7106', { layout: 'full', location: 'Sisimitepec, Sonsonate', date: 'September 2023', alt: "People gather around a ceremonial fire ringed with stones and offerings of flowers and fruit in a forest clearing, holding seeds in their hands" }),
+    P('DSC_7110', { layout: 'half', location: 'Sisimitepec, Sonsonate', date: 'September 2023', alt: "A man in an orange shirt and straw hat kneels with open hands before the ceremonial fire while a drummer and a guitarist stand behind him" }),
+    P('DSC_7112', { layout: 'half', location: 'Sisimitepec, Sonsonate', date: 'September 2023', alt: "A woman holds a baby near the ceremonial fire while a girl in an orange dress stands beside her" }),
+    P('DSC_7129', { layout: 'full', location: 'Sisimitepec, Sonsonate', date: 'September 2023', alt: "A ceremony leader in a red headscarf offers seeds from a gourd bowl to participants; one woman wears a T-shirt reading Aquí vivimos, aquí resistimos" }),
 
     /* ---- 2) HISTORIANTES ---- */
-    P('DSC_7610', { layout: 'full', alt: "Costumed young dancers with machetes cross a cobbled street in front of a mural of an elder in a coin-decorated headdress, as a procession carries a flower-covered cross" }),
-    P('DSC_7507', { layout: 'half', alt: "Two young dancers in satin capes, sunglasses and ornate headdresses march with machetes down a cobbled street" }),
-    P('DSC_7577', { layout: 'half', alt: "Close portrait of a young dancer in mirrored sunglasses beneath a gourd helmet fringed with old Salvadoran coins" }),
-    P('DSC_7437', { layout: 'full', alt: "A dancer in a red-faced mask and lavender satin cape holds a decorated gourd topped with a small painted figure carrying a bell and a cross" }),
+    P('DSC_7610', { layout: 'full', location: 'Sonsonate', date: 'September 2023', alt: "Costumed young dancers with machetes cross a cobbled street in front of a mural of an elder in a coin-decorated headdress, as a procession carries a flower-covered cross" }),
+    P('DSC_7507', { layout: 'half', location: 'Sonsonate', date: 'September 2023', alt: "Two young dancers in satin capes, sunglasses and ornate headdresses march with machetes down a cobbled street" }),
+    P('DSC_7577', { layout: 'half', location: 'Sonsonate', date: 'September 2023', alt: "Close portrait of a young dancer in mirrored sunglasses beneath a gourd helmet fringed with old Salvadoran coins" }),
+    P('DSC_7437', { layout: 'full', location: 'Sonsonate', date: 'September 2023', alt: "A dancer in a red-faced mask and lavender satin cape holds a decorated gourd topped with a small painted figure carrying a bell and a cross" }),
 
     /* ---- 3) CIUDAD ---- */
-    P('DSC_5556', { layout: 'half', location: 'La Tiendona market', date: 'May 7, 2026', alt: "A fishmonger in an apron lifts a large red snapper from a crate in front of a chest of ice" }),
-    P('DSC_5575', { layout: 'half', location: 'La Tiendona market', date: 'May 7, 2026', alt: "A seated corn vendor in a pale blue T-shirt rests his hand on a net sack of fresh corn in his stall" }),
-    P('DSC_6372', { layout: 'half', location: 'Mercado Central, San Salvador', caption: "Nelly Salazar at her poultry stall, a trade inherited from her mother.", alt: "A smiling poultry vendor leans on a doorframe and holds up a dressed chicken garnished with parsley and small tomatoes" }),
-    P('DSC_6538', { layout: 'half', location: 'Mercado Central, San Salvador', alt: "A poultry vendor hands a bagged order across a counter piled with dressed chickens, under a sign that reads NELLY" }),
-    P('DSC_7777', { layout: 'full', alt: "A weathered corner building with rusted awnings and a red iron gate; a man in a red cap sits on the curb step" }),
-    P('DSC_7797', { layout: 'half', alt: "A man sits in a doorway among stacks of used books, with a wooden shelf of paperbacks displayed beside him" }),
-    P('DSC_5640', { layout: 'half', date: 'May 7, 2026', alt: "A vendor in a plaid shirt and a baseball cap stands beside a doorway hung with tools, among books, a clay figure, a cash box of jewelry and other secondhand goods" }),
-    P('DSC_5627', { layout: 'half', date: 'May 7, 2026', alt: "A hand holds a small set of antique brass bells against a turquoise wall" }),
-    P('DSC_5639', { layout: 'half', date: 'May 7, 2026', alt: "A worn Sagrada Biblia leans on a tray beside a clay figure and an open cash box of jewelry, against a turquoise wall" }),
-
+    P('DSC_5556', { layout: 'half', location: 'La Tiendona market, San Salvador', date: 'May 7, 2026', alt: "A fishmonger in an apron lifts a large red snapper from a crate in front of a chest of ice" }),
+    P('DSC_5575', { layout: 'half', location: 'La Tiendona market, San Salvador', date: 'May 7, 2026', alt: "A seated corn vendor in a pale blue T-shirt rests his hand on a net sack of fresh corn in his stall" }),
+    P('DSC_6372', { layout: 'half', location: 'Mercado Central, San Salvador', date: 'May 2026', caption: "Nelly Salazar at her poultry stall, a trade inherited from her mother.", alt: "A smiling poultry vendor leans on a doorframe and holds up a dressed chicken garnished with parsley and small tomatoes" }),
+    P('DSC_6538', { layout: 'half', location: 'Mercado Central, San Salvador', date: 'May 2026', alt: "A poultry vendor hands a bagged order across a counter piled with dressed chickens, under a sign that reads NELLY" }),
+    P('DSC_7777', { layout: 'full', location: 'Centro Histórico, San Salvador', date: 'May 2026', alt: "A weathered corner building with rusted awnings and a red iron gate; a man in a red cap sits on the curb step" }),
+    P('DSC_7797', { layout: 'half', location: 'Centro Histórico, San Salvador', date: 'May 2026', alt: "A man sits in a doorway among stacks of used books, with a wooden shelf of paperbacks displayed beside him" }),
+    P('DSC_5640', { layout: 'half', location: 'Centro Histórico, San Salvador', date: 'May 7, 2026', alt: "A vendor in a plaid shirt and a baseball cap stands beside a doorway hung with tools, among books, a clay figure, a cash box of jewelry and other secondhand goods" }),
+    P('DSC_5627', { layout: 'half', location: 'Centro Histórico, San Salvador', date: 'May 7, 2026', alt: "A hand holds a small set of antique brass bells against a turquoise wall" }),
+    P('DSC_5639', { layout: 'half', location: 'Centro Histórico, San Salvador', date: 'May 7, 2026', alt: "A worn Sagrada Biblia leans on a tray beside a clay figure and an open cash box of jewelry, against a turquoise wall" }),
     /* ---- 4) RÉGIMEN DE EXCEPCIÓN ---- */
     P('_DSC2705', { layout: 'full', location: 'Calle Sisimiles, San Salvador', date: 'May 4, 2022', caption: "Police secure the street while an officer photographs detainees during a state-of-exception raid on a rehabilitation shelter.", alt: "Armed police officers stand in a line across a street at dusk while one photographs three men seated in the bed of a police pickup" }),
     P('_DSC2649', { layout: 'half', location: 'Calle Sisimiles, San Salvador', date: 'May 4, 2022', caption: "A detainee with crutches sits in the bed of a police truck.", alt: "A man with crutches sits on the tailgate of a police pickup surrounded by officers in dark uniforms, a volcano rising behind" }),
